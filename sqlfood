@@ -1,0 +1,24 @@
+CREATE DATABASE hr_analytics;
+USE hr_analytics;
+
+CREATE TABLE job_placement (
+    age_years FLOAT,
+    gender INT,
+    ssc_percentage FLOAT,
+    hsc_percentage FLOAT,
+    degree_percentage FLOAT,
+    technical_score FLOAT,
+    aptitude_score FLOAT,
+    communication_score FLOAT,
+    skills_match_percentage FLOAT,
+    certifications_count FLOAT,
+    years_of_experience FLOAT,
+    company_tier INT,
+    expected_ctc_lpa FLOAT,
+    competition_level INT,
+    status INT
+);
+SELECT AVG(status)*100 AS placement_rate FROM job_placement;
+SELECT company_tier, AVG(status)*100
+FROM job_placement
+GROUP BY company_tier;
